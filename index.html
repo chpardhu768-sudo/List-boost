@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Listo – Optimize Your E‑Commerce Listings in Seconds</title>
+  <meta name="description" content="Generate SEO-friendly titles, extract product specs, and calculate profitable prices automatically with Listo.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>">
+</head>
+<body>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Onboarding Overlay -->
+<div class="onboard-overlay" id="onboardOverlay">
+  <div class="onboard-card">
+    <h3 id="onboardTitle"></h3>
+    <p id="onboardText"></p>
+    <div class="onboard-dots" id="onboardDots"></div>
+    <div class="onboard-actions">
+      <button class="btn btn-outline btn-sm" onclick="closeOnboard()">Skip</button>
+      <button class="btn btn-solid btn-sm" onclick="nextOnboard()">Next →</button>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container">
+    <a href="#" class="nav-logo">📦 Lis<span>to</span></a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle">🌙</button>
+      <button class="btn btn-outline btn-sm">Login</button>
+      <button class="btn btn-solid btn-sm">Get Started</button>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#features">Features</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#faq">FAQ</a>
+  <a href="#">Login</a>
+  <a href="#">Get Started</a>
+</div>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-text fade-up">
+      <h1>Optimize your e‑commerce listings <span class="highlight">in seconds.</span></h1>
+      <p>Generate SEO‑friendly titles, extract product specs, and calculate profitable prices — automatically.</p>
+      <div class="hero-ctas">
+        <a href="#input" class="btn btn-accent">🚀 Try for Free</a>
+        <a href="#reviews" class="btn btn-outline">▶ View Demo</a>
+      </div>
+    </div>
+    <div class="hero-image fade-up">
+      <img src="hero_mockup.png" alt="Listo App Dashboard" onerror="this.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="section" id="reviews">
+  <div class="container">
+    <h2 class="section-title fade-up">Loved by Sellers Worldwide</h2>
+    <p class="section-sub fade-up">Join thousands of e‑commerce sellers who've boosted their listings with Listo.</p>
+    <div class="reviews-grid">
+      <div class="review-card fade-up">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Listo completely transformed how I create product listings. My click‑through rate jumped 40% in the first month. The SEO titles are spot‑on!"</p>
+        <div class="review-author">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">RP</div>
+          <div>
+            <div class="review-name">Rahul Patel</div>
+            <div class="review-role">Amazon Seller · India</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-up">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The profit calculator alone saved me hours every week. I can instantly see margins across different marketplaces. Absolutely essential tool."</p>
+        <div class="review-author">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#ec4899,#f43f5e)">SK</div>
+          <div>
+            <div class="review-name">Sarah Kim</div>
+            <div class="review-role">Shopify Store Owner · USA</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-up">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I used to spend 2 hours per listing. Now it takes 5 minutes. The scraped specs are incredibly accurate and the export feature is a lifesaver."</p>
+        <div class="review-author">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">AM</div>
+          <div>
+            <div class="review-name">Arjun Mehta</div>
+            <div class="review-role">Flipkart Seller · India</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-up">
+        <div class="review-stars">★★★★<span style="color:var(--text3)">★</span></div>
+        <p class="review-text">"Great tool for multi‑platform sellers. I list on Amazon, eBay and Shopify — Listo handles all of them seamlessly. The tone options are a nice touch."</p>
+        <div class="review-author">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#0ea5e9,#06b6d4)">LC</div>
+          <div>
+            <div class="review-name">Laura Chen</div>
+            <div class="review-role">Multi-Platform Seller · UK</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-up">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"As a dropshipper, speed is everything. Listo lets me analyze products and set competitive prices in seconds. My revenue is up 25% since I started using it."</p>
+        <div class="review-author">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#10b981,#059669)">DV</div>
+          <div>
+            <div class="review-name">David Voss</div>
+            <div class="review-role">Dropshipper · Germany</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-up">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The CSV and PDF exports make reporting to my clients so easy. I manage 50+ product listings and Listo keeps everything organized. Highly recommend!"</p>
+        <div class="review-author">
+          <div class="review-avatar" style="background:linear-gradient(135deg,#8b5cf6,#3b82f6)">PN</div>
+          <div>
+            <div class="review-name">Priya Nair</div>
+            <div class="review-role">E‑Commerce Consultant · India</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="section" id="features" style="background:var(--bg2)">
+  <div class="container">
+    <h2 class="section-title fade-up">Powerful Features</h2>
+    <p class="section-sub fade-up">Everything you need to create high‑converting product listings.</p>
+    <div class="features-grid">
+      <div class="feature-card fade-up" data-feature="tabSEO" style="cursor:pointer">
+        <div class="feature-icon seo">🔍</div>
+        <h3>SEO Title &amp; Description</h3>
+        <p>AI‑powered title generation with customizable tone and length. Get 5 optimized variations instantly with keyword‑rich descriptions.</p>
+      </div>
+      <div class="feature-card fade-up" data-feature="tabSpecs" style="cursor:pointer">
+        <div class="feature-icon scraper">📊</div>
+        <h3>Product Data Scraper</h3>
+        <p>Auto‑extract specs, dimensions, weight, variants, pricing, and offers from major marketplaces in one click.</p>
+      </div>
+      <div class="feature-card fade-up" data-feature="tabCalc" style="cursor:pointer">
+        <div class="feature-icon calc">💰</div>
+        <h3>Profit Calculator</h3>
+        <p>Factor in cost, shipping, commission, and margins to find your ideal selling price. Supports multiple currencies and platforms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Input Section -->
+<section class="input-section" id="input">
+  <div class="container">
+    <div class="input-wrapper">
+      <h2 class="fade-up">Enter your product information</h2>
+      <p class="fade-up">Paste a product title, URL, or basic details from Amazon, Flipkart, Shopify, etc.</p>
+      <div class="input-row fade-up">
+        <textarea id="productInput" placeholder="Enter product title / URL / details…" rows="1"></textarea>
+        <select class="source-select" id="sourceSelect">
+          <option value="auto">🔗 Source: Auto</option>
+          <option value="amazon">Amazon</option>
+          <option value="flipkart">Flipkart</option>
+          <option value="shopify">Shopify</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <button class="analyze-btn" id="analyzeBtn">🔍 Analyze</button>
+      <div class="progress-bar" id="progressBar"><div class="fill" id="progressFill"></div></div>
+      <div class="examples fade-up">
+        <span style="color:var(--text3);cursor:default">Try:</span>
+        <span class="example-chip" data-text="Wireless Bluetooth headset with noise cancellation">🎧 Bluetooth Headset</span>
+        <span class="example-chip" data-text="https://www.amazon.in/dp/B09XYZ1234">🔗 Amazon URL</span>
+        <span class="example-chip" data-text="Organic cotton t-shirt crew neck men's casual wear">👕 Cotton T-Shirt</span>
+      </div>
+    </div>
+
+    <!-- Results Panel -->
+    <div class="results-panel" id="resultsPanel">
+      <div class="tab-bar">
+        <button class="tab-btn active" data-tab="tabSEO">🔍 SEO Title &amp; Description</button>
+        <button class="tab-btn" data-tab="tabSpecs">📊 Product Specs &amp; Dimensions</button>
+        <button class="tab-btn" data-tab="tabCalc">💰 Price &amp; Profit Calculator</button>
+      </div>
+
+      <!-- Tab 1: SEO -->
+      <div class="tab-content active" id="tabSEO">
+        <div class="seo-controls">
+          <div><label>Length:</label><select id="descLength"><option value="short">Short</option><option value="medium" selected>Medium</option><option value="long">Long</option></select></div>
+          <div><label>Tone:</label><select id="descTone"><option value="professional" selected>Professional</option><option value="casual">Casual</option><option value="premium">Premium</option></select></div>
+        </div>
+        <h4 style="font-size:.9rem;font-weight:600;margin-bottom:12px;color:var(--text2)">📝 Title Options</h4>
+        <div class="title-list" id="titleList"></div>
+        <h4 style="font-size:.9rem;font-weight:600;margin-bottom:12px;color:var(--text2)">📄 Product Description</h4>
+        <div class="desc-box">
+          <p id="descText" style="transition:opacity .3s"></p>
+        </div>
+        <div class="desc-actions">
+          <button class="btn btn-outline btn-sm" onclick="regenerateDesc()">🔄 Regenerate</button>
+          <button class="btn btn-outline btn-sm" onclick="copyDescription()">📋 Copy Description</button>
+        </div>
+      </div>
+
+      <!-- Tab 2: Specs -->
+      <div class="tab-content" id="tabSpecs">
+        <h4 style="font-size:.9rem;font-weight:600;margin-bottom:16px;color:var(--text2)">📊 Product Specifications &amp; Marketplace Data</h4>
+        <table class="specs-table">
+          <thead><tr><th>Property</th><th>Value</th></tr></thead>
+          <tbody id="specsBody"></tbody>
+        </table>
+        <div style="margin-top:16px;font-size:.82rem;color:var(--text3)">
+          ℹ️ Data scraped from marketplace listing. <a href="#" style="color:var(--primary)">View original →</a>
+        </div>
+      </div>
+
+      <!-- Tab 3: Calculator -->
+      <div class="tab-content" id="tabCalc">
+        <h4 style="font-size:.9rem;font-weight:600;margin-bottom:16px;color:var(--text2)">💰 Listing Price &amp; Profit Calculator</h4>
+        <div class="calc-form">
+          <div class="calc-field">
+            <label>Cost Price</label>
+            <div class="input-group">
+              <input type="number" id="costPrice" class="calc-input" placeholder="0" value="1200">
+              <select class="unit" id="currencySelect"><option value="INR">₹</option><option value="USD">$</option><option value="EUR">€</option></select>
+            </div>
+          </div>
+          <div class="calc-field">
+            <label>Shipping Cost</label>
+            <div class="input-group">
+              <input type="number" id="shippingCost" class="calc-input" placeholder="0" value="80">
+              <span class="unit">per unit</span>
+            </div>
+          </div>
+          <div class="calc-field">
+            <label>Marketplace Commission (%)</label>
+            <div class="input-group">
+              <input type="number" id="commission" class="calc-input" placeholder="15" value="15">
+              <span class="unit">%</span>
+            </div>
+          </div>
+          <div class="calc-field">
+            <label>Target Profit Margin (%)</label>
+            <div class="input-group">
+              <input type="number" id="targetMargin" class="calc-input" placeholder="20" value="20">
+              <span class="unit">%</span>
+            </div>
+          </div>
+          <div class="calc-field">
+            <label>Marketplace</label>
+            <select id="marketplace">
+              <option value="amazon">Amazon</option>
+              <option value="flipkart">Flipkart</option>
+              <option value="shopify">Shopify</option>
+              <option value="custom">Custom</option>
+            </select>
+          </div>
+        </div>
+        <div class="calc-outputs">
+          <div class="calc-output-card green">
+            <div class="label">Recommended Price</div>
+            <div class="value" id="sellingPrice">₹0</div>
+          </div>
+          <div class="calc-output-card blue">
+            <div class="label">Est. Profit / Unit</div>
+            <div class="value" id="estProfit">₹0</div>
+          </div>
+          <div class="calc-output-card amber">
+            <div class="label">Break‑Even Price</div>
+            <div class="value" id="breakEven">₹0</div>
+          </div>
+        </div>
+        <div class="calc-actions">
+          <button class="btn btn-accent btn-sm" onclick="calculateProfit()">💰 Calculate</button>
+          <button class="btn btn-danger-outline btn-sm" onclick="resetCalc()">↩ Reset</button>
+        </div>
+      </div>
+
+      <!-- Export Bar -->
+      <div class="export-bar">
+        <button class="btn btn-outline btn-sm" onclick="copyAllResults()">📋 Copy All</button>
+        <button class="btn btn-outline btn-sm" onclick="exportCSV()">📊 Export CSV</button>
+        <button class="btn btn-outline btn-sm" onclick="exportPDF()">📄 Export PDF</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="section" id="pricing">
+  <div class="container">
+    <h2 class="section-title fade-up">Simple, Transparent Pricing</h2>
+    <p class="section-sub fade-up">Start free. Upgrade as you grow.</p>
+    <div class="pricing-grid">
+      <div class="price-card fade-up">
+        <h3>Starter</h3>
+        <div class="price">$0<span>/mo</span></div>
+        <p class="price-desc">Perfect for trying things out</p>
+        <ul class="price-features">
+          <li>10 analyses per month</li>
+          <li>3 SEO title variations</li>
+          <li>Basic specs scraping</li>
+          <li>Profit calculator</li>
+        </ul>
+        <button class="btn btn-outline" style="width:100%">Get Started</button>
+      </div>
+      <div class="price-card popular fade-up">
+        <h3>Pro</h3>
+        <div class="price">$19<span>/mo</span></div>
+        <p class="price-desc">Best for growing sellers</p>
+        <ul class="price-features">
+          <li>Unlimited analyses</li>
+          <li>5 SEO title variations</li>
+          <li>Advanced data scraping</li>
+          <li>CSV &amp; PDF export</li>
+          <li>Priority support</li>
+        </ul>
+        <button class="btn btn-solid" style="width:100%">Upgrade to Pro</button>
+      </div>
+      <div class="price-card fade-up">
+        <h3>Enterprise</h3>
+        <div class="price">$49<span>/mo</span></div>
+        <p class="price-desc">For teams &amp; agencies</p>
+        <ul class="price-features">
+          <li>Everything in Pro</li>
+          <li>API access</li>
+          <li>Team collaboration</li>
+          <li>Custom integrations</li>
+          <li>Dedicated account manager</li>
+        </ul>
+        <button class="btn btn-outline" style="width:100%">Contact Sales</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="background:var(--bg2)">
+  <div class="container">
+    <h2 class="section-title fade-up">Frequently Asked Questions</h2>
+    <p class="section-sub fade-up">Got questions? We've got answers.</p>
+    <div class="faq-list">
+      <div class="faq-item fade-up">
+        <div class="faq-q">What marketplaces does Listo support? <span class="arrow">▼</span></div>
+        <div class="faq-a"><p>Listo supports Amazon, Flipkart, Shopify, eBay, and more. You can also paste any product URL or manually enter details for unsupported platforms.</p></div>
+      </div>
+      <div class="faq-item fade-up">
+        <div class="faq-q">How accurate is the SEO title generation? <span class="arrow">▼</span></div>
+        <div class="faq-a"><p>Our AI engine analyzes top‑performing listings and search trends to generate titles optimized for visibility. Titles typically improve click‑through rates by 20–35%.</p></div>
+      </div>
+      <div class="faq-item fade-up">
+        <div class="faq-q">Is my product data secure? <span class="arrow">▼</span></div>
+        <div class="faq-a"><p>Absolutely. We don't store any product data on our servers. All processing is done in real‑time and results are only available in your browser session.</p></div>
+      </div>
+      <div class="faq-item fade-up">
+        <div class="faq-q">Can I cancel my subscription anytime? <span class="arrow">▼</span></div>
+        <div class="faq-a"><p>Yes! There are no long‑term contracts. You can upgrade, downgrade, or cancel your plan at any time from your account settings.</p></div>
+      </div>
+      <div class="faq-item fade-up">
+        <div class="faq-q">Do you offer an API? <span class="arrow">▼</span></div>
+        <div class="faq-a"><p>Yes, our Enterprise plan includes full API access with detailed documentation, allowing you to integrate Listo into your own tools and workflows.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="font-size:1.3rem">📦 Lis<span>to</span></a>
+        <p>Optimize your e‑commerce listings with AI‑powered SEO titles, automated data scraping, and smart pricing tools.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#">API Docs</a></li>
+          <li><a href="#">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Listo. All rights reserved. Built with ❤️ for e‑commerce sellers.</div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
